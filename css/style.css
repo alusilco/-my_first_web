@@ -20,7 +20,7 @@ body {
         "header header header" 
         "main main aside" 
         "main main aside" 
-        "article1 article2 article3" 
+        "small small small" 
         "gallery gallery gallery"
         "footer footer footer";
     column-gap: .5rem;
@@ -116,12 +116,23 @@ main article header {
 .author div p {
     font-size: 1rem;
     line-height: .5rem;
+    width: auto;
+}
+
+.flor7 {
+    width: 100%;
 }
 
 main article>p {
     margin: 1rem 2rem;
     font-size: 1.2rem;
     line-height: 1.8rem;
+}
+
+aside section {
+    padding: 0 1rem 0 0;
+    font-size: 50%;
+
 }
 
 main article figcaption {
@@ -137,47 +148,128 @@ figcaption {
 
 /* --------------------------------------------------------- */
 
-.item1 {
-    grid-area: nav;
-    background-color: greenyellow;
-}
-
-.item2 {
-    grid-area: main;
-    background-color: lightcoral;
-}
-
 /* SECCIÓN LATERAL (aside) */
 
 aside {
     grid-area: aside;
-    background-color: rgb(248, 212, 170)
+    
 }
 
-.item4 {
-    grid-area: article1;
-    background-color: lightgreen;
+aside section {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 65%;
+    margin-bottom: 0 0 3rem 1rem;
+    margin: 1rem 0 2rem 0;
 }
 
-.item5 {
-    grid-area: article2;
-    background-color: lightskyblue;
+aside h3 {
+    background-color: black;
+    color: white;
+    padding: .5rem;
+    text-align: center;
 }
 
-.item6 {
-    grid-area: article3;
-    background-color: lightcyan;
+aside ol{
+    border-bottom:  rgb(93, 93, 93)
 }
+
+aside li {
+    margin-bottom: 2rem;
+}
+
+aside a{
+    text-decoration: none;
+    color: black;
+    line-height: 1.5rem;
+}
+
+/* BANNERS */
+
+.ad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+aside .ad div {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    height: 200px;
+    width: 80%;
+    background-color: orange;
+    margin-bottom: 2rem;
+}
+
+
+/* Articulos de abajo */
+
+.small {
+    grid-area: small;
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 50%;
+
+}
+
+.small article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    margin-bottom: 3rem;
+}
+
+.small article h2,
+img,
+p {
+    margin: .5rem 0;
+    width: 95%;
+
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: footer;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black; /* Color del texto */
+}
+
+.footer-left {
+    font-size: 0.9rem;
+}
+
+.footer-right a {
+    margin-left: 1rem;
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.footer-right img {
+    width: 24px;
+    height: 24px;
+   
+}
+
+.foto {
+    height: 300px;
+}
+
 
 .item7 {
     grid-area: gallery;
-    background-color: cyan;
+    background-color: white;
 }
 
-.item8 {
-    grid-area: footer;
-    background-color: hotpink;
-}
 
 /* MEDIAS QUERIES */
 
@@ -251,17 +343,49 @@ aside {
         font-size: 1rem;
 
     }
+
+    aside section {
+        padding: 0 1rem 0 0;
+        font-size: 50%;
+    }
+
+    .small {
+        font-size: 50%;
+    }
+
+    .small article {
+        width: 35%;
+    }
+
+    .small article h2,
+    img,
+    p {
+        width: 90%;
+    }
+
+
+
 }
 
 @media screen and (max-width: 720px) {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "header" "main" "main" "article1" "article2" "article3" "aside" "gallery" "footer";
+        grid-template-areas: "header" "main" "main" "small" "aside" "gallery" "footer";
     }    
 
     .header {
         height: 250px;
+        position: static;
+    }
+
+    .small {
+        font-size: 55%;
+    }
+
+    .small article {
+        width: 80%;
+        border-bottom: 1px solid rgb(93,93, 93);
     }
 }
 
