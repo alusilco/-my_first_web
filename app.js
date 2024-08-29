@@ -2,10 +2,11 @@ const express = require('express');
 const { create } = require('express-handlebars');
 const indexRouter = require("./routes/index")
 const contactoRouter = require("./routes/contacto")
+const loginRouter = require("./routes/login")
 
 
 const path = require('path');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Configuración de express-handlebars
@@ -28,7 +29,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use("/", indexRouter);
 app.use("/contacto", contactoRouter);
-
+app.use("/login", loginRouter)
 
 
 app.listen(PORT, () => {
