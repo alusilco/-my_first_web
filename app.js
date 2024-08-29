@@ -3,10 +3,11 @@ const { create } = require('express-handlebars');
 const indexRouter = require("./routes/index")
 const contactoRouter = require("./routes/contacto")
 const loginRouter = require("./routes/login")
+const pool = require("./db")
 
 
 const path = require('path');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Configuración de express-handlebars
