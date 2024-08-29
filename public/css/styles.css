@@ -322,7 +322,6 @@ form textarea {
     gap: 1rem; 
 }
 
-/* Estilos para los botones */
 .btn input {
     width: 6rem;
     height: 2.5rem;
@@ -340,7 +339,115 @@ form textarea {
     color: black;
 }
 
+.form span {
+    font-size: 1rem;
+    background-color: beige;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 5px black;
+    margin: 1rem 0 2rem 0;
+}
 
+
+footer {
+    grid-area: footer;
+    color: whitesmoke;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-contact,
+.footer-social {
+    flex: 1;
+    margin: 1.5rem 0;
+    text-align: center;
+   
+}
+
+.footer-social h4,
+.footer-legal h4 {
+    text-align: center;
+}
+
+
+.footer-legal {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    order: -1;
+}
+
+
+
+.footer p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.footer-icons {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: whitesmoke;
+}
+
+.footer-icons a {
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-icons a:hover {
+    color: #f0a500;
+}
+
+.footer-legal p {
+    margin: 0.5rem 0;
+}
+
+.footer-legal a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: block; /* Asegura que el enlace sea tratado como un bloque */
+    margin: 1rem auto; /* Centra horizontalmente el enlace */
+    max-width: 100px; /* Opcional: establece un ancho máximo si es necesario */
+    transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+    color: #f0a500;
+}
+
+.footer-icons img {
+    width: 50px;
+}
+
+@media (min-width: 768px) {
+    footer {
+        flex-wrap: nowrap;
+        padding: 2rem;
+    }
+
+    .footer-contact,
+    .footer-social {
+        flex-basis: 25%;
+    }
+
+    .footer-legal {
+        flex-basis: 50%;
+        order: 0;
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 /*.................. MEDIAS QUERIES ......................*/
 
@@ -354,7 +461,6 @@ form textarea {
         "article3 article3"  "gallery gallery" "footer footer";   
             
     }
-
     .header {
         align-items: center;
         justify-content: space-between;

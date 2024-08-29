@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "backend y frontend of flower project",
   "main": "app.js",
-  
   "scripts": {
     "dev": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +20,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^5.3.5",
-    "handlebars": "^4.7.8"
+    "handlebars": "^4.7.8",
+    "nodemailer": "^6.9.14"
   },
   "devDependencies": {
     "@types/express-handlebars": "^6.0.0",

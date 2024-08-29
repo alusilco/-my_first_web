@@ -1,20 +1,24 @@
-<section class="formContainer">
-    <form action="/contacto" method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" autofocus placeholder="Nombre">
-        
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Apellido">
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Email">
-        
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" cols="30" rows="6" placeholder="Su mensaje aquí..."></textarea>
-        
-        <div class="btn">
-            <input type="reset" value="Limpiar">
-            <input type="submit" value="Enviar">
-        </div>
-    </form>
-</section>
+  <section class="formContainer">
+        <form action="/contacto" method="post">
+            {{#if statusMessage}}
+            <span>{{statusMessage}}</span>
+            {{/if}}
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" autofocus placeholder="Nombre">
+            
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" cols="30" rows="6" placeholder="Su mensaje aquí..."></textarea>
+            
+            <div class="btn">
+                <input type="reset" value="Limpiar">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
+
