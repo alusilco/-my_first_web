@@ -18,6 +18,7 @@ body {
     grid-template-rows: auto;
     grid-template-areas: 
         "header header header" 
+        "admin admin admin"
         "form form form"
         "main main aside" 
         "main main aside" 
@@ -557,7 +558,7 @@ button a:hover {
     .grid-container {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "header" "form" "main" "main" "small" "aside" "gallery" "footer";
+        grid-template-areas: "header" "admin" "form" "main" "main" "small" "aside" "gallery" "footer";
     }    
 
     .header {
