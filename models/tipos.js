@@ -41,4 +41,15 @@ const borrarTipos = async(id) => {
     }
 }
 
-module.exports = {agregarTipos, leerTipos, leerTipos, borrarTipos }
+async function cambiarTipos(data, id) {
+    try {
+        const query = "UPDATE tipos SET ? WHERE id = ?";
+        const row = await pool.query(query, [data, id])
+        return row
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+module.exports = {agregarTipos, leerTipos, leerTipos, borrarTipos, cambiarTipos }

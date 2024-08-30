@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="css/style.css">
+<section class="formContainer">
+    <header class="admin-header crud-form">
+        <div class="btn">
+            <span>{{user}}</span>
+            <a href="/login/logout"><input type="button" value="logout"></a>
+            <a href="/listado"><input type="button" value="volver"></a>
+
+        </div>
+    </header>
+    {{#each flores}}
+    <form class="form crud-form" action="/listado/modificar" method="POST">
+        <input type="text" name="id" value={{id}} hidden>
+        <input type="text" name="tipos" placeholder="Tipos de flores..." value="{{tipos}}" autofocus required>
+        <textarea name="características" rows="5" placeholder="Características principales" required>{{caracteristicas}}</textarea>
+        <textarea name="detalle" rows="5" placeholder="Detalles..." required>{{detalle}}</textarea>
+
+       {{!-- <label for="imagen">Seleccione una imagen</label>
+        <input id="imagen" type="file" name="imagen" accept=".jpg, .gif,.png" required> --}}
+
+        <div class="btn">
+            <input type="submit">
+        </div>
+    </form>
+    {{/each}}
+</section>

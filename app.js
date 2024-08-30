@@ -10,6 +10,7 @@ const contactoRouter = require('./routes/contacto');
 const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
 const listadoRouter = require('./routes/listado');
+const modificarRouter = require("./routes/modificar");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -63,6 +64,7 @@ app.use("/contacto", contactoRouter);
 app.use("/login", loginRouter);
 app.use('/admin', auth, adminRouter);
 app.use("/listado", auth, listadoRouter)
+app.use("/modificar", auth, modificarRouter)
 
 
 app.listen(PORT, () => {

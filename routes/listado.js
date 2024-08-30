@@ -26,7 +26,23 @@ router.get("/borrar/:id", async(req,res)=>{
     await destroy(row[0].imagen)
     await tipos.borrarTipos(req.params.id)
     res.redirect("/listado")
-}
-)
+})
+
+
+router.get("/modificar/:id", async(req, res)=>{
+    const data = await tipos.leerTipos(req.params.id)
+    const flores = data.determinePacket((row)=> {
+        return {...row}
+    })
+    res.render("/modificar", { flores})
+})
+router.post("/modificar", async(req, res) =>{
+    const { id, tipos, características, detalle } = req.body
+    const data = {
+        tipos, características, detalle
+    }
+    await tipos.cambiarTipos(data, id)
+    res.redirect("/admin")
+})
 
 module.exports = router
