@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const contactoRouter = require('./routes/contacto');
 const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
+const listadoRouter = require('./routes/listado');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -59,10 +60,9 @@ app.use(fileupload({
 
 app.use("/", indexRouter);
 app.use("/contacto", contactoRouter);
-app.use("/login", loginRouter)
-app.use('/admin', auth, (req, res) => {
-    res.render('partials/admin');  
-});
+app.use("/login", loginRouter);
+app.use('/admin', auth, adminRouter);
+app.use("/listado", auth, listadoRouter)
 
 
 app.listen(PORT, () => {

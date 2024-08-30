@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const cloudinary = require("cloudinary")
+const cloudinary = require("cloudinary").v2
 const util = require("util")
 const tipos = require("../models/tipos")
 
 const upload = util.promisify(cloudinary.uploader.upload);
-const destroy = util.promisify(cloudinary.uploader.destroy);
 
 
 
