@@ -1,2 +1,22 @@
-<pre>Estamos en la sección de administración</pre>
-<p>Email del usuario registrado {{user}}</p>
+<section class="formContainer">
+    <header class="admin-header crud-form">
+        <div class="btn">
+            <span>{{user}}</span>
+            <a href="/login/logout"><input type="button" value="logout"></a>
+        </div>
+    </header>
+
+    <form class="form crud-form" action="/admin" method="POST" enctype="multipart/form-data">
+        <input type="text" name="tipo" placeholder="Tipo de flor..." autofocus required>
+        <textarea name="características" rows="5" placeholder="Características principales" required></textarea>
+        <textarea name="detalle" rows="5" placeholder="Detalles..." required></textarea>
+
+        <label for="imagen">Seleccione una imagen</label>
+        <input id="imagen" type="file" name="imagen" accept=".jpg, .gif,.png" required>
+
+        <div class="btn">
+            <input type="submit">
+            <a href="/admin"><input type="button" value="Cancelar"></a>
+        </div>
+    </form>
+</section>

@@ -1,7 +1,9 @@
+require("dotenv").config()
 const express = require('express');
 const { create } = require('express-handlebars');
 const session = require('express-session');
 const path = require('path');
+const fileupload = require("express-fileupload")
 
 const indexRouter = require('./routes/index');
 const contactoRouter = require('./routes/contacto');
@@ -30,7 +32,7 @@ app.use(session({
     secret: '12345',
     resave: false,
     saveUninitialitized: true,
-    cookie: { secure: false } // 'secure: true' solo para HTTPS
+    //cookie: { secure: false } 'secure: true' solo para HTTPS
 }))
 
 // Carpeta de archivos estáticos
@@ -46,8 +48,12 @@ function auth(req, res, next) {
     }
 }
 
+//midelware de fileupload
 
-
+app.use(fileupload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/"
+}))
 
 
 
